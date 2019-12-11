@@ -8,15 +8,18 @@ import java.util.Objects;
 
 @Entity
 @DynamicUpdate
-@Table(name="test_table")
+@Table(name = "test_table")
 public class TestTable {
-    private long idx;
-    private String text;
-    private Timestamp regDate;
-    private Timestamp udtDate;
 
     @Id
     @Column(name = "idx")
+    private long idx;
+    private String text;
+    @Column(name = "reg_date", insertable = false, updatable = false)
+    private Timestamp regDate;
+    @Column(name = "udt_date", insertable = false, updatable = false)
+    private Timestamp udtDate;
+
     public long getIdx() {
         return idx;
     }
@@ -25,8 +28,6 @@ public class TestTable {
         this.idx = idx;
     }
 
-    @Basic
-    @Column(name = "text")
     public String getText() {
         return text;
     }
@@ -35,8 +36,6 @@ public class TestTable {
         this.text = text;
     }
 
-    @Basic
-    @Column(name = "reg_date")
     public Timestamp getRegDate() {
         return regDate;
     }
@@ -45,30 +44,12 @@ public class TestTable {
         this.regDate = regDate;
     }
 
-    @Basic
-    @Column(name = "udt_date")
     public Timestamp getUdtDate() {
         return udtDate;
     }
 
     public void setUdtDate(Timestamp udtDate) {
         this.udtDate = udtDate;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TestTable testTable = (TestTable) o;
-        return idx == testTable.idx &&
-                Objects.equals(text, testTable.text) &&
-                Objects.equals(regDate, testTable.regDate) &&
-                Objects.equals(udtDate, testTable.udtDate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idx, text, regDate, udtDate);
     }
 
     @Override
