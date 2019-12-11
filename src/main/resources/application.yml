@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://actibody-1.cv2wrtnwbrav.ap-northeast-2.rds.amazonaws.com:5432/actibody
+    username: actibody
+    password: passw0rd!!!288
+    driver-class-name: org.postgresql.Driver
+  test-on-borrow: true
+  validation-query: select 1
+  test-while-idle: true
+  min-evictable-idle-time-millis: 3600000
+  time-between-eviction-runs-millis: 60000
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp.use_jdbc_metadata_defaults: false
+      main:
+        allow-bean-definition-overriding: true
+    database: default
