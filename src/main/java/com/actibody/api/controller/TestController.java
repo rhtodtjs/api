@@ -18,5 +18,6 @@ public class TestController {
         TestTable t = repository.findByIdx(1L);
         System.out.println(t.toString());
 
+        System.out.println(t.getText());
     }
 }
