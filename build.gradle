@@ -36,6 +36,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.2.2.RELEASE'
     compile group: 'org.springframework', name: 'spring-context', version: '5.2.2.RELEASE'
     compile group: 'org.springframework', name: 'spring', version: '5.2.2.RELEASE', ext: 'pom'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
 }
 
